@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display"></div>
+        <div class="buttons">
+            <button onclick="clear()">C</button>
+            <button onclick="delete1()">Back</button>
+            <button onclick="Display('/')">/</button>
+            <button onclick="Display('*')">*</button>
+            <button onclick="Display('7')">7</button>
+            <button onclick="Display('8')">8</button>
+            <button onclick="Display('9')">9</button>
+            <button onclick="Display('-')">-</button>
+            <button onclick="Display('4')">4</button>
+            <button onclick="Display('5')">5</button>
+            <button onclick="Display('6')">6</button>
+            <button onclick="Display('+')">+</button>
+            <button onclick="Display('1')">1</button>
+            <button onclick="Display('2')">2</button>
+            <button onclick="Display('3')">3</button>
+            <button onclick="calculateResult()">=</button>
+            <button onclick="Display('0')" class="zero">0</button>
+            <button onclick="Display('.')">.</button>
+        </div>
+    </div>
+
+    <script>
+        function clear() {
+            document.getElementById('display').innerText = '';
+        }
+
+        function delete1() {
+            let display = document.getElementById('display');
+            display.innerText = display.innerText.slice(0, -1);
+        }
+
+        function Display(value) {
+            document.getElementById('display').innerText += value;
+        }
+
+        function calculateResult() {
+            let display = document.getElementById('display');
+            try {
+                display.innerText = eval(display.innerText);
+            } catch (e) {
+                display.innerText = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>

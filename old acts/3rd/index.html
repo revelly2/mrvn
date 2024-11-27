@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook-like Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar Section -->
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+        <h2>Lovely</h2>
+        <p>Web Developer & Designer</p>
+        <button onclick="viewProfile()" class="hoverable-btn">View Profile</button>
+      </div>
+      <div class="friends">
+        <h3>Friends</h3>
+        <div class="friend">
+          <img src="friend1.jpg" alt="Friend Picture">
+          <p>Jane Smith</p>
+        </div>
+        <div class="friend">
+          <img src="friend2.jpg" alt="Friend Picture">
+          <p>Michael Brown</p>
+        </div>
+        <div class="friend">
+          <img src="friend3.jpg" alt="Friend Picture">
+          <p>Sophia Johnson</p>
+        </div>
+        <div class="friend">
+          <img src="friend4.jpg" alt="Friend Picture">
+          <p>David Wilson</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Section -->
+    <main class="main">
+      <div class="post-creator">
+        <textarea id="postInput" placeholder="What's on your mind?"></textarea>
+        <button onclick="createPost()" class="hoverable-btn">Post</button>
+      </div>
+      <div id="posts" class="posts">
+        <!-- Pre-filled Posts -->
+        <div class="post">
+          <h3>Jane Smith</h3>
+          <img src="post1.jpg" alt="Post Image" class="post-img">
+          <p>Had a great day hiking in the mountains!</p>
+        </div>
+        <div class="post">
+          <h3>Michael Brown</h3>
+          <img src="post2.jpg" alt="Post Image" class="post-img">
+          <p>Check out this amazing sunset I captured!</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Profile Section (Hidden by Default) -->
+  <div id="profileSection" class="hidden">
+    <h2>Lovely's Profile</h2>
+    <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+    <p>Email: love.doe@example.com</p>
+    <p>Bio: Passionate about web development and design.</p>
+    <button onclick="backToMain()" class="hoverable-btn">Back to Main</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products by Seller</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #303030; /* Dark gray background */
+            color: #ffffff; /* White text */
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #00bfff; /* Blue title */
+            text-align: center;
+        }
+
+        .product-card {
+            width: 200px; /* Adjust card width */
+            background-color: #454545; /* Dark gray card background */
+            border: 1px solid #707070; /* Dark gray border */
+            border-radius: 5px;
+            margin: 10px;
+            overflow: hidden; /* Ensure image doesn't overflow */
+            display: inline-block; /* Display cards in a row */
+        }
+
+        .product-image {
+            width: 100%; /* Image takes full width of card */
+            height: auto; /* Maintain aspect ratio */
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .product-details {
+            padding: 10px;
+        }
+
+        .product-details h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: #ffffff; /* White text */
+        }
+
+        .product-details p {
+            margin: 5px 0;
+            font-size: 14px; /* Adjust font size */
+        }
+
+        .product-actions {
+            padding: 10px;
+            background-color: #303030; /* Dark gray background for actions */
+            text-align: center;
+        }
+
+        .product-actions a {
+            color: #00bfff; /* Blue links */
+            text-decoration: none;
+            margin: 0 5px;
+            font-size: 12px; /* Adjust font size */
+        }
+
+        .product-actions a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Products by <?php echo $seller; ?></h1>
+
+
+            <div class="product-card">
+    
+                    <img src="63e8eb0b1814c83d8e8c5dfed1ffd3ca.jpg" alt="Product Image" class="product-image">
+           
+                <div class="product-details">
+                    <h3>Kamatis</h3>
+                    <p><strong>ID:</strong> 1 </p>
+                    <p><strong>Price:</strong> $300</p>
+                </div>
+                <div class="product-actions">
+                    <a href="update.php?product_id=<?php echo $row['product_id']; ?>">Edit</a>
+                    <a href="delete.php?product_id=<?php echo $row['product_id']; ?>" onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
+                </div>
+            </div>
+        
+    </div>
+
+
+</body>
+</html>
